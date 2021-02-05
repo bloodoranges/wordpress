@@ -1,0 +1,16 @@
+// Google Analytics Implementation in footer
+
+add_action( 'wp_footer', 'my_google_analytics_script', 20); //20 is low priority
+function my_google_analytics_script() {
+	?>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-*********-*"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-*********-*');
+	</script>
+	<?php
+}
